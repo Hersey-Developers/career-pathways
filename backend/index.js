@@ -2,19 +2,16 @@ const mongoose = require("mongoose");
 
 require("dotenv").config();
 
-const dbUrl = `mongodb+srv://admin:${process.env.MONGODB_PASSWORD}@cluster0.oz0iqlb.mongodb.net/?retryWrites=true&w=majority`;
+const dbUrl = `mongodb+srv://admin:7zHTVl6GzzsJvpFf@cluster0.gpf4usx.mongodb.net/?retryWrites=true&w=majority`;
 
 mongoose
   .connect(dbUrl, {
-    auth: {
-      username: process.env.MONGODB_USER,
-      password: process.env.MONGODB_PASSWORD,
-    },
     useNewUrlParser: true,
     useUnifiedTopology: true,
     retryWrites: false,
   })
   .then(() => {
+    console.log("Connected to MongoDB. Server started.")
     const app = require("./app");
     app.listen(process.env.PORT || 5000);
   })
