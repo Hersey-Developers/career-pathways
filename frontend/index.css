@@ -3,9 +3,8 @@ html {
 }
 
 body {
-    background-color: #e95317;
-    color: white;
-}
+    background-color: orange;
+
 
 .container {
    margin-top: 15%;
@@ -20,4 +19,5 @@ span {
     display: inline-flex;
     justify-content: end;
     width: 6rem;
+
 }
