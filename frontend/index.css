@@ -3,12 +3,12 @@ html {
 }
 
 body {
-    background-color: orange;
-
+    background-color: #F18752;
+    color: white;
+}
 
 .container {
-   margin-top: 15%;
-   
+   margin-top: 12%;
 }
 
 button, a {
@@ -19,5 +19,10 @@ span {
     display: inline-flex;
     justify-content: end;
     width: 6rem;
+}
 
+h1 {
+    font-weight: 700;
+    line-height: 60px;
+    font-size: 40px;
 }

@@ -1,0 +1,72 @@
+html {
+    font-family: 'Poppins', sans-serif;
+}
+
+nav {
+    position: relative;
+    width: 100%;
+    height: 4.25em;
+    left: 0px;
+    top: 0px;
+    background-color: #F7F7F7;
+    display: flex;
+    align-items: center;
+}
+
+nav h1 {
+    font-weight: 700;
+    size: 1.5625em;
+    line-height: 2.34375em;
+    background: linear-gradient(90deg, #F28853 -5.98%, #D26A74 83.3%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+body {
+    background-color: #FEFEFE;
+    font-family: 'Poppins', sans-serif;
+}
+
+main {
+    margin-top: 2em;
+}
+
+#homepage {
+    font-size: 1.25em;
+    line-height: 1.875em;
+}
+
+#homepage, #your-career-clusters {
+    margin-left: 2em;
+}
+
+.cluster {
+    background-color: #F1F1F1;
+    border-radius: 5px;
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-left: 3em;
+}
+
+.cluster h2 {
+    font-weight: 700;
+    font-size: 1.875em;
+    line-height: 2.8125em;
+    color: black;
+}
+
+#average, #job-market {
+    font-size: 1.125em;
+    line-height: 1.6875em;
+    margin-left: 1.5em;
+}
+
+.cluster a {
+    margin-top: 1em;
+    padding-bottom: 2em;
+}
+
+
