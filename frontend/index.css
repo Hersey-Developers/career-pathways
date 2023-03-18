@@ -1,10 +1,12 @@
 html {
     font-family: 'Poppins', sans-serif;
+    height: 100%;
 }
 
 body {
-    background-color: #F18752;
+    background: linear-gradient(180deg, #F18752 0%, #C75922 100%);
     color: white;
+    
 }
 
 .container {
