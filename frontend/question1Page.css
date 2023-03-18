@@ -45,5 +45,6 @@ section {
 }
 
 button {
-    width: 14%;
+    width: 15%;
+    border-radius: 10%;
 }
