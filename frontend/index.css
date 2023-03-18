@@ -1,14 +1,16 @@
 html {
     font-family: 'Poppins', sans-serif;
+    height: 100%;
 }
 
 body {
-    background-color: orange;
-
+    background: linear-gradient(180deg, #F18752 0%, #C75922 100%);
+    color: white;
+    
+}
 
 .container {
-   margin-top: 15%;
-   
+   margin-top: 12%;
 }
 
 button, a {
@@ -19,5 +21,10 @@ span {
     display: inline-flex;
     justify-content: end;
     width: 6rem;
+}
 
+h1 {
+    font-weight: 700;
+    line-height: 60px;
+    font-size: 40px;
 }
