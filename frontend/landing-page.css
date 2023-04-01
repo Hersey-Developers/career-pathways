@@ -2,15 +2,26 @@ html {
     font-family: 'Poppins', sans-serif;
 }
 body {
-    background-color: #EC6A3B;
-    margin-top: 19em;
-    margin-left: 45em;
+    height: 100vh;
+    background: linear-gradient(  #E17A4F, #EF6428)
+    
 }
-h1 {
+#ULT {
+height: 100vh;
+display: flex;
+justify-content: center ;
+align-items: center;
+
+
+
+}
+
+
+#Block {
+height: fit-content;
+   width: fit-content;
+   position: relative; bottom: 100px;
     color: whitesmoke;
     font-weight: 900;
-}
-a {
-    color: whitesmoke;
-    font-weight: 300;
+    
 }

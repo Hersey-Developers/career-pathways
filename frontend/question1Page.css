@@ -2,49 +2,23 @@ html {
     font-family: 'Poppins', sans-serif;
 }
 
-section {
-    position: relative;
-    top: 400px;
-    left: 700px;
-    
-}
-#pv{
-    font-family: 'Poppins', sans-serif;
-    border-color: #D0CECE;
-    border-style: solid;
-    padding: 20px;
-    font-weight: 400;
-    flex-direction: column;
+#container {
+    display: flex;
     align-items: center;
-    margin: 15px;
-    
-}
+    justify-content: center;
+    height: 100vh;
+   
 
-
-#ps{
-    font-family: 'Poppins', sans-serif;
-    border-color: #D0CECE;
-    border-style: solid;
-    padding: 20px;
-    font-weight: 400;
-    flex-direction: column;
-    align-items: center;
-    margin: 15px;
-}
-
-#psr{
-    font-family: 'Poppins', sans-serif;
-    border-color: #D0CECE;
-    border-style: solid;
-    padding: 20px;
-    font-weight: 400;
-    flex-direction: column;
-    align-items: center;
-    margin: 15px;
-    
 }
 
 button {
-    width: 15%;
-    border-radius: 10%;
+    width: 275px;
+    height: 60px;
+    border-radius: 10px;
+    border-color: #D0CECE;
+    border-style: solid;
+    padding: 15px;
+    font-weight: 400;
+    margin: 1.45vh;
 }
+   
