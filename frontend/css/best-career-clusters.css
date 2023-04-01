@@ -14,6 +14,7 @@ nav {
 }
 
 nav h1 {
+    margin-left: .5em;
     font-weight: 700;
     size: 1.5625em;
     line-height: 2.34375em;
@@ -30,6 +31,7 @@ body {
 
 main {
     margin-top: 2em;
+    margin-left: 3.5em;
 }
 
 #homepage {
@@ -37,36 +39,40 @@ main {
     line-height: 1.875em;
 }
 
-#homepage, #your-career-clusters {
-    margin-left: 2em;
-}
-
 .cluster {
     background-color: #F1F1F1;
     border-radius: 5px;
     width: 80%;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     flex-direction: column;
-    margin-left: 3em;
+    padding-top: 1.25em;
 }
 
 .cluster h2 {
     font-weight: 700;
     font-size: 1.875em;
-    line-height: 2.8125em;
+    /* line-height: 2.8125em; */
     color: black;
 }
 
 #average, #job-market {
     font-size: 1.125em;
-    line-height: 1.6875em;
-    margin-left: 1.5em;
+    /* line-height: 1.6875em; */
 }
 
 .cluster a {
     margin-top: 1em;
-    padding-bottom: 2em;
+}
+
+/* .cluster a, .career {
+    margin-left: 2em;
+} */
+
+.career {
+    display: flex;
+    flex-direction: column;
+    margin-left: 1.5em;
 }
 
 
