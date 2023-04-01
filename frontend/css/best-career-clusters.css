@@ -52,22 +52,16 @@ main {
 .cluster h2 {
     font-weight: 700;
     font-size: 1.875em;
-    /* line-height: 2.8125em; */
     color: black;
 }
 
 #average, #job-market {
     font-size: 1.125em;
-    /* line-height: 1.6875em; */
 }
 
 .cluster a {
     margin-top: 1em;
 }
-
-/* .cluster a, .career {
-    margin-left: 2em;
-} */
 
 .career {
     display: flex;
