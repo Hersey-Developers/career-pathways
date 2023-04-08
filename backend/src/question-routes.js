@@ -1,8 +1,9 @@
 const express = require('express');
+const Question = require('../models/question');
+const mongoose = require('mongoose')
+
 
 const router = express.Router();
-
-const Question = require('../models/question');
 
 // Sample question objects
 
@@ -36,15 +37,24 @@ router.get('/', async (req, res) => {
 });
 
 // Get a specific Question object
-router.get('/:questionId', async (req, res) => {
+router.get('/:questionId', async (req, res, next) => {
+    const question = req.params.questionId;
+    Question.findById(question)
+        .then(question => {
+            if(!question){
+                const error = new Error("Could Not Find Question");
+                error.statusCode = 404;
+                throw(error)
+            }
+            res.statusCode(200).json({message: "Question Found!" ,question : question})
+        })
+        .catch(err => {
+            if (!err.statusCode){
+                err.statusCode = 500;
+            }
+            next(err);
+        })
 
-    // --- YOUR CODE GOES UNDER THIS LINE --- 
-
-    // --------- DELETE THIS CONTENT --------
-    res.send({
-        message: "Hello World"
-    })
-    // -------------------------------------
 });
 
 // Create a new Question object
@@ -61,27 +71,58 @@ router.post('/', async (req, res) => {
 });
 
 // Update a specific Question object
-router.patch('/:questionId', async (req, res) => {
+router.patch('/:questionId', async (req, res, next) => {
+    const questionId = req.params.questionId;
+    const order = req.body.order;
+    const text = req.body.text;
+    const options = req.body.options;
+    const optionWeights = req.body.optionWeights;
 
-    // --- YOUR CODE GOES UNDER THIS LINE --- 
-
-    // --------- DELETE THIS CONTENT --------
-    res.send({
-        message: "Hello World"
+    Question.findById(questionId)
+    .then(question => {
+        if(!question){
+            const error = new Error("Could Not Find Question");
+            error.statusCode = 404;
+            throw(error)
+        }
+        question.order = order;
+        question.text = text;
+        question.options = options;
+        question.optionWeights = optionWeights;
+        return question.save();
     })
-    // -------------------------------------
+    .then(result => {
+        res.statusCode(200).json({message: "Question Has Been Updated", question: result})
+    })
+    .catch(err => {
+        if (!err.statusCode){
+            err.statusCode = 500;
+        }
+        next(err);
+    })
 });
 
 // Delete a specific Question object
-router.delete('/:questionId', async (req, res) => {
-
-    // --- YOUR CODE GOES UNDER THIS LINE --- 
-
-    // --------- DELETE THIS CONTENT --------
-    res.send({
-        message: "Hello World"
+router.delete('/:questionId', async (req, res, next) => {
+    const questionId = req.params.questionId;
+    Question.findById(questionId)
+    .then(question => {
+        if(!question){
+            const error = new Error("Could Not Find Question");
+            error.statusCode = 404;
+            throw(error)
+        }
+        return question.findByIdAndRemove(questionId)
     })
-    // -------------------------------------
+    .then(result => {
+        res.statusCode(200).json({message: "Deleted Question"})
+    })
+    .catch(err => {
+        if (!err.statusCode){
+            err.statusCode = 500;
+        }
+        next(err);
+    })
 });
 
 module.exports = router;
