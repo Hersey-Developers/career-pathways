@@ -7,11 +7,13 @@ html {
     align-items: center;
     justify-content: center;
     height: 100vh;
+    
    
 
 }
 
 button {
+    
     width: 275px;
     height: 60px;
     border-radius: 10px;
@@ -21,4 +23,15 @@ button {
     font-weight: 400;
     margin: 1.45vh;
 }
+
    
+   
+
+
+button:hover {
+    transform: translate(0, -6px);
+    box-shadow: 10px -10px 25px 0 rgb(192, 192, 192);
+    transition-duration: 0.4s;
+    
+}
+
