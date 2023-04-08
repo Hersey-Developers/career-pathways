@@ -1,4 +1,5 @@
 const express = require('express');
+const sector = require('../models/sector');
 const router = express.Router();
 
 const Sector = require('../models/sector');
@@ -26,50 +27,101 @@ router.get('/', async (req, res) => {
 
 // Get a specific Sector object
 router.get('/:sectorId', async (req, res) => {
-    // --- YOUR CODE GOES UNDER THIS LINE ---
-
-
-    // --------- DELETE THIS CONTENT --------
-    res.send({
-        message: "Hello World"
-    })
-    // -------------------------------------
+    const sector = req.params.sectorId;
+    Sector.findById(sector)
+        .then(sector => {
+            if(!sector){
+                const error = new Error("Could Not Find Sector");
+                error.statusCode = 404;
+                throw(error)
+            }
+            res.statusCode(200).json({message: "Sector Found!", sector: sector})
+        })
+        .catch(err => {
+            if (!err.statusCode){
+                err.statusCode = 500;
+            }
+            next(err);
+        })
 });
 
 router.post('/', async (req, res) => {
-    // --- YOUR CODE GOES UNDER THIS LINE ---
-
-
-    // --------- DELETE THIS CONTENT --------
-    res.send({
-        message: "Hello World"
+    const name = req.body.name;
+    const avgIncome = req.body.avgIncome;
+    const projectedGrowth = req.body.projectedGrowth;
+    const usNewsLink = req.body.usNewsLink;
+    const sector = new Sector({
+        name: name,
+        avgIncome: avgIncome, 
+        projectedGrowth: projectedGrowth, 
+        usNewsLink: usNewsLink
     })
-    // -------------------------------------
+    sector
+        .save()
+        .then(result => {
+            res.status(201).json({sector: result})
+
+        })
+        .catch(err => {
+            console.log(err)
+        })
 })
 
 // Update a specific Sector object
 router.patch('/:sectorId', async (req, res) => {
-    // --- YOUR CODE GOES UNDER THIS LINE ---
+    const sectorId = req.params.sectorId;
+    const name = req.body.name;
+    const avgIncome = req.body.avgIncome;
+    const projectedGrowth = req.body.projectedGrowth;
+    const usNewsLink = req.body.usNewsLink;
 
-    // --------- DELETE THIS CONTENT --------
-    res.send({
-        message: "Hello World"
+    Sector.findById(sectorId)
+    .then(sector => {
+        if(!sector){
+            const error = new Error("Could Not Find Question");
+            error.statusCode = 404;
+            throw(error)
+        }
+        sector.name = name;
+        sector.avgIncome = avgIncome;
+        sector.projectedGrowth = projectedGrowth;
+        sector.usNewsLink = usNewsLink;
+        return sector.save();
     })
-    // -------------------------------------
+    .then(result => {
+        res.statusCode(200).json({message: "Sector Has Been Updated", sector: result})
+    })
+    .catch(err => {
+        if (!err.statusCode){
+            err.statusCode = 500;
+        }
+        next(err);
+    })
+
 })
 
 // Delete a specific Sector object
 
 router.delete('/:sectorId', async (req, res) => {
-
-    // --- YOUR CODE GOES UNDER THIS LINE ---
-
-
-    // --------- DELETE THIS CONTENT --------
-    res.send({
-        message: "Hello World"
+    const sectorId = req.params.sectorId;
+    Sector.findById(sectorId)
+    .then(sector => {
+        if(!sector){
+            const error = new Error("Could Not Find Sector");
+            error.statusCode = 404;
+            throw(error)
+        }
+        return sector.findByIdAndRemove(sectorId)
     })
-    // -------------------------------------
+    .then(result => {
+        res.statusCode(200).json({message: "Deleted Sector"})
+    })
+    .catch(err => {
+        if (!err.statusCode){
+            err.statusCode = 500;
+        }
+        next(err);
+    })
 
 });
 

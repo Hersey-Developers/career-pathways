@@ -11,7 +11,7 @@ mongoose
     retryWrites: false,
   })
   .then(() => {
-    console.log("Connected to MongoDB. Server started.")
+    console.log("Connected to MongoDB. Server started. :)")
     const app = require("./app");
     app.listen(process.env.PORT || 5000);
   })
