@@ -27,13 +27,12 @@ const router = express.Router();
 // Get all Question objects
 router.get('/', async (req, res) => {
 
-    // --- YOUR CODE GOES UNDER THIS LINE --- 
-
-    // --------- DELETE THIS CONTENT --------
-    res.send({
-        message: "Hello World"
-    })
-    // -------------------------------------
+    try {
+        const questions = await Question.find();
+        res.json(questions);
+    } catch (err) {
+        res.json({ message: err });
+    }
 });
 
 // Get a specific Question object
@@ -59,15 +58,19 @@ router.get('/:questionId', async (req, res, next) => {
 
 // Create a new Question object
 router.post('/', async (req, res) => {
+    const question = new Question({
+        order: req.body.order,
+        text: req.body.text,
+        options: req.body.options,
+        weights: req.body.optionWeights
+    });
 
-    // --- YOUR CODE GOES UNDER THIS LINE --- 
-
-    // --------- DELETE THIS CONTENT --------
-    res.send({
-        message: "Hello World"
-    })
-    // -------------------------------------
-
+    try {
+        const savedQuestion = await question.save();
+        res.json(savedQuestion);
+    } catch (err) {
+        res.json({ message: err });
+    }
 });
 
 // Update a specific Question object
