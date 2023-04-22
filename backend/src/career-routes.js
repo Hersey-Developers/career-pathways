@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const Career = require('../models/career');
+const career = require('../models/career');
 
 // Sample Career Objects
 
@@ -31,28 +32,31 @@ const Career = require('../models/career');
 // }
 
 router.get('/', async (req, res) => {
-    // Get all Career objects
-
-    // --- YOUR CODE GOES UNDER THIS LINE ---
-
-    // --------- DELETE THIS CONTENT --------
-    res.send({
-        message: "Hello World"
-    })
-    // -------------------------------------
+   try {
+        const career = await Career.find();
+        res.json(career);
+    } catch (err) {
+        res.json({ message: err });
+    }
 });
 
 router.get('/:careerId', async (req, res) => {
-    // Get an individual Career
-
-    // --- YOUR CODE GOES UNDER THIS LINE ---
-
-
-    // --------- DELETE THIS CONTENT --------
-    res.send({
-        message: "Hello World"
-    })
-    // -------------------------------------
+    const career = req.params.careerId;
+    Career.findById(career)
+        .then(career => {
+            if(!career){
+                const error = new Error("Could Not Find Career");
+                error.statusCode = 404;
+                throw(error)
+            }
+            res.statusCode(200).json({message: "Career Found!", career: career})
+        })
+        .catch(err => {
+            if (!err.statusCode){
+                err.statusCode = 500;
+            }
+            next(err);
+        })
 });
 
 router.post('/', async (req, res) => {
@@ -70,42 +74,80 @@ router.post('/', async (req, res) => {
         sectorId: req.body.sectorId,
         usNewsLink: req.body.usNewsLink
     })
+    newCareer
+        .save()
+        .then(result => {
+            res.status(201).json({career: result})
 
-    await newCareer.save()
-
-    // --------- DELETE THIS CONTENT --------
-    res.send({
-        newCareer
-    })
-    // -------------------------------------
+        })
+        .catch(err => {
+            console.log(err)
+        })
 })
 
 router.patch('/:careerId', async (req, res) => {
-    // Update a Career object
+    const name = req.body.name
+    const description = req.body.description
+    const avgIncome = req.body.avgIncome
+    const numJobs = req.body.numJobs
+    const projectedGrowth = req.body.projectedGrowth
+    const projectedOpenings = req.body.projectedOpenings
+    const sectorId = req.body.sectorId
+    const usNewsLink = req.body.usNewsLink
+    const careerId = req.params.careerId
 
-    // --- YOUR CODE GOES UNDER THIS LINE ---
-
-
-    // --------- DELETE THIS CONTENT --------
-    res.send({
-        message: "Hello World"
+    Career.findById(careerId)
+    .then(career => {
+        if(!career){
+            const error = new Error("Could Not Find Career");
+            error.statusCode = 404;
+            throw(error)
+        }
+        career.name = name;
+        career.description = description;
+        career.avgIncome = avgIncome;
+        career.numJobs = numJobs;
+        career.projectedGrowth = projectedGrowth;
+        career.projectedOpenings = projectedOpenings;
+        career.sectorId = sectorId;
+        career.usNewsLink = usNewsLink;
+        return career.save();
     })
-    // -------------------------------------
+    .then(result => {
+        res.statusCode(200).json({message: "Career Has Been Updated", career: result})
+    })
+    .catch(err => {
+        if (!err.statusCode){
+            err.statusCode = 500;
+        }
+        next(err);
+    })
+
+
 })
 
 // Delete a specific Sector object
 
 router.delete('/:sectorId', async (req, res) => {
-    // Delete a Career object
-
-    // --- YOUR CODE GOES UNDER THIS LINE ---
-
-
-    // --------- DELETE THIS CONTENT --------
-    res.send({
-        message: "Hello World"
+    const careerId = req.params.careerId;
+    Career.findById(careerId)
+    .then(career => {
+        if(!career){
+            const error = new Error("Could Not Find Career");
+            error.statusCode = 404;
+            throw(error)
+        }
+        return career.findByIdAndRemove(careerId)
     })
-    // -------------------------------------
+    .then(result => {
+        res.statusCode(200).json({message: "Deleted Sector"})
+    })
+    .catch(err => {
+        if (!err.statusCode){
+            err.statusCode = 500;
+        }
+        next(err);
+    })
 });
 
 module.exports = router;
