@@ -15,14 +15,12 @@ const Sector = require('../models/sector');
 // Get all Sector objects
 
 router.get('/', async (req, res) => {
-    // --- YOUR CODE GOES UNDER THIS LINE ---
-
-
-    // --------- DELETE THIS CONTENT --------
-    res.send({
-        message: "Hello World"
-    })
-    // -------------------------------------
+    try {
+        const sector = await Sector.find();
+        res.json(sector);
+    } catch (err) {
+        res.json({ message: err });
+    }
 });
 
 // Get a specific Sector object
