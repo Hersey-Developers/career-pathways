@@ -65,10 +65,57 @@
 </button>
 </div>
 </div>
+<!-- onclick="openPopup()" -->
+  <button id="open-popup" type="button">Dummy</button>
+  <div class="popup" id="popup">
+    <div class="popup-elements">
+    <h2>Software Engineer</h2>
+    <button type="button" id="close-popup">X</button>
+    <p id="job-description">Software developers design computer applications or programs. Software quality assurance analysts and testers identify problems with applications or programs and report defects.</p>
+    <div class="info-container">
+    <div class="info">
+      <img src="Images/income.png" alt="">
+      <h3>Average Income</h3>
+      <p>$100,402 per year</p>
+    </div>
+    <div class="info">
+      <img src="Images/education.png" alt="">
+      <h3>Education Needed</h3>
+      <p>Bachelor's Degree</p>
+    </div>
+    <div class="info">
+      <img src="Images/job.png" alt="">
+      <h3>Number of Jobs</h3>
+      <p>1,622,200</p>
+    </div>
+    <div class="info">
+      <img src="Images/job-outlook.png" alt="">
+      <h3>Job Outlook</h3>
+      <p id="job-outlook">+25%</p>
+    </div>
+    <div class="info" id="last">
+      <img src="Images/openings.png" alt="">
+      <h3>Projected Openings</h3>
+      <p id="projected-openings">+411,400</p>
+    </div>
+  </div>
+  </div>
+  </div>
     </section>
-
     <script type="application/javascript" src="js/main.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script>
+      const popup = document.getElementById('popup')
+      const open = document.getElementById('open-popup')
+      const close = document.getElementById('close-popup')
+      open.addEventListener('click', () => {
+        popup.classList.add('show')
+      })
+
+      close.addEventListener('click', () => {
+        popup.classList.remove('show')
+      })
+    </script>
 </body>
 </html>
