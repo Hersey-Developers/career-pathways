@@ -252,9 +252,102 @@ font-size: 25px;
 padding-left: 150px;
 }
  
- 
- 
- 
+ .popup {
+    /* 32 width */
+    width: 25rem;  
+    height: 23rem;
+    border-radius: 1.25rem;
+    background-color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -35%);
+    text-align: left;
+    visibility: hidden;
+ }
 
+ .popup.show {
+    visibility: visible;
+ }
 
+ .popup-elements {
+    margin-left: 2rem;
+ }
+ 
+ .popup h2 {
+    color: #090909;
+    font-weight: 700;
+    line-height: 2.8125rem;
+    font-size: 1.5rem;
+    display: inline-flex;
+    width: 91%;
+    margin-bottom: .25rem;
+ }
+
+ #close-popup {
+    position: fixed;
+    top: 2rem;
+    background-color: transparent;
+    color: black;
+    font-weight: 700;
+    font-size: 0.75rem;
+    box-shadow: none;
+    border: none;
+ }
+
+ #close-popup:hover {
+    cursor: pointer;
+ }
+
+ #job-description {
+    color: #7D7D7D;
+    line-height: 1.3125rem;
+    font-size: 0.6rem;
+    height: 5.625rem;
+    width: 80%;
+    font-weight: 400;
+    opacity: .8;
+ }
+
+ .popup img {
+    width: 1rem;
+    height: 1rem;
+ }
+
+ .popup .info {
+    display: inline-flex;;
+    height: 1.9375rem;
+    justify-content: flex-start;
+ }
+
+ .info-container {
+    display: flex;
+    flex-direction: column;
+ }
+
+ .info p {
+    color: #6F6F6F;
+    margin-left: 1.5rem;
+    font-weight: 400;
+    margin-top: 0px;
+    font-size: 0.6rem;
+ }
+
+ .info h3 {
+    font-weight: 400;
+    width: 6rem;
+    height: 1.9375rem;
+    position: relative;
+    top: -0.6rem;
+    color: #2F2F2F;
+    font-size: 0.6rem;
+ }
+
+ .info img {
+    margin-right: .5rem; 
+ }
+
+#job-outlook, #projected-openings {
+    color: #38A81C;
+}
 
