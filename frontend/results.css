@@ -11,6 +11,34 @@
 }
 
 
+nav {
+    position: relative;
+    width: 100%;
+    left: 0px;
+    top: 0px;
+    background-color: #F7F7F7;
+    display: flex;
+    align-items: center;
+    margin: -7.3px;
+}
+
+nav h1 {
+    margin: 0;
+    margin-left: 1rem;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 2.34375em;
+    background: linear-gradient(90deg, #F28853 -5.98%, #D26A74 83.3%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+nav a {
+    text-decoration: none;
+}
+
+
 html {
     font-family: 'Poppins', sans-serif;
     color: #DF8535;
@@ -20,7 +48,7 @@ html {
 #LandT{
     margin-top: 50px;
 }
-#link{
+.link{
     font-size: 20px;
     color: #528DE6;
     font-weight: 400;
@@ -28,29 +56,36 @@ html {
     width: fit-content;
     height: fit-content;
 }
-#link:hover{
+.link:hover{
 color: #011AF9;
 
 }
 #title{
     color: black;
-    font-size: 45px;
+    font-size: 35px;
     font-weight: 650;
     margin-left: 55px;
     margin-bottom: 30px;
 }
 
 #main2{
-    margin-top: -150px;
+}
+
+.container {
+    max-width: 800px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: 0 60px;
+    gap: 20px 10px;
 }
 
 #box1{
     color: black;
-    background-color: #CECECE;
+    background-color: #e3e3e3;
     width: 510px;
-    margin-bottom: -400px;
-    margin-left: 100px;
-    box-shadow: 2px 2px 10px black;
+    box-shadow: 2px 2px 10px rgb(226, 226, 226);
+    padding: 10px;
+    border-radius: 10px;
     display: inline-block;
     transition: transfrom 0.6s ease;
    
@@ -60,8 +95,12 @@ color: #011AF9;
    font-size: 25px;
    margin-left: 10px;
    margin-bottom: 30px;
-   
 }
+
+#title1 h1 {
+    margin-top: 10px;
+}
+
 #perc1{
 font-weight: 400;
 font-size: 25px;
@@ -81,6 +120,22 @@ line-height: 20px;
 font-size: 20px;
 margin-left: 10px;
 }
+#gr5{
+color: #43c4c4;
+line-height: 20px;
+font-size: 20px;
+margin-left: 10px;
+}
+
+#gray{
+    color: #4b4b4b;
+    line-height: 20px;
+    font-size: 20px;
+    margin-left: 10px;
+}
+
+
+
 #but1{
     color: white;
     background-color: #0077FF;   
@@ -350,4 +405,5 @@ padding-left: 150px;
 #job-outlook, #projected-openings {
     color: #38A81C;
 }
+
 

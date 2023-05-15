@@ -1,30 +1,36 @@
 html {
     font-family: 'Poppins', sans-serif;
-    height: 100%;
 }
-
 body {
-    background: linear-gradient(180deg, #F18752 0%, #C75922 100%);
-    color: white;
+    height: 100vh;
+    background: linear-gradient(  #E17A4F, #EF6428)
     
 }
+#ULT {
+height: 100vh;
+padding: 50px;
+display: flex;
+justify-content: left;
+align-items: center;
 
-.container {
-   margin-top: 12%;
 }
 
-button, a {
-    margin-top: 3rem;
+.title {
+    font-weight: bold;
 }
 
-span {
-    display: inline-flex;
-    justify-content: end;
-    width: 6rem;
+a {
+    font-weight: 400;
+    font-size: 20px;
 }
 
-h1 {
-    font-weight: 700;
-    line-height: 60px;
-    font-size: 40px;
+
+#Block {
+    height: fit-content;
+    width: fit-content;
+    position: relative;
+    color: whitesmoke;
+    font-weight: 900;
 }
+
+

@@ -10,6 +10,33 @@
    
 }
 
+nav {
+    position: relative;
+    width: 100%;
+    left: 0px;
+    top: 0px;
+    background-color: #F7F7F7;
+    display: flex;
+    align-items: center;
+    margin: -7.3px;
+}
+
+nav h1 {
+    margin: 0;
+    margin-left: 1rem;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 2.34375em;
+    background: linear-gradient(90deg, #F28853 -5.98%, #D26A74 83.3%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+nav a {
+    text-decoration: none;
+}
+
 
 html {
     font-family: 'Poppins', sans-serif;
@@ -17,6 +44,15 @@ html {
     font-weight: 650;
     font-size: 34px;
 }
+
+#title{
+    color: black;
+    font-size: 35px;
+    font-weight: 650;
+    margin-left: 55px;
+    margin-bottom: 30px;
+}
+
 #LandT{
     margin-top: 50px;
 }
@@ -40,27 +76,35 @@ color: #011AF9;
     margin-bottom: 5px;
 }
 
-#main2{
-    margin-top: -150px;
+
+.container {
+    max-width: 800px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px 10px;
+    margin: 0 55px;
 }
 
+
 #box1{
+    
     color: black;
-    background-color: #CECECE;
+    background-color: #e3e3e3;
     width: 510px;
-    margin-bottom: -450px;
-    margin-left: 100px;
-    box-shadow: 2px 2px 10px black;
+    box-shadow: 2px 2px 10px rgb(226, 226, 226);
+    padding: 10px;
+    border-radius: 10px;
     display: inline-block;
     transition: transfrom 0.6s ease;
    
 }
 
 #title1{
-   font-size: 22px;
+   font-size: 15px;
    margin-left: 10px;
    margin-bottom: 30px;
    line-height: 20px;
+
    
 }
 #des1{
@@ -75,6 +119,13 @@ color: #33C133;
 line-height: 20px;
 font-size: 18px;
 margin-left: 10px;
+}
+#gray {
+    color: #626365;
+    line-height: 20px;
+    font-size: 18px;
+    margin-left: 10px;
+    font-weight: 400;
 }
 #text1{
 color: #626365;
@@ -116,13 +167,15 @@ padding-left: 150px;
 }
 
 #box2{
+
     color: black;
-    background-color: #CECECE;
+    background-color: #e3e3e3;
     width: 510px;
-    margin-top: 50px;
-    margin-left: 50px;
-    box-shadow: 2px 2px 10px black;
+    box-shadow: 2px 2px 10px rgb(226, 226, 226);
+    padding: 10px;
+    border-radius: 10px;
     display: inline-block;
+    transition: transfrom 0.6s ease;
 }
 
     

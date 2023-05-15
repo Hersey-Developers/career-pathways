@@ -8,41 +8,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link type="text/css" rel="stylesheet" href="css/vendor/normalize.css" />
     <link type="text/css" rel="stylesheet" href="css/main.css" />
-    <link type="text/css" rel="stylesheet" href="yourbestcareerFields.css" />
+    <link type="text/css" rel="stylesheet" href="results.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
 
   </head>
+
   <body>
     
-    <div id="bot">Career Pathways</div>
+    <nav>
+    <a href="/frontend/index.html">
+      <h1>Career Pathways</h1>   
+    </a>
+    </nav>
+
     <section>
          
    <div id="LandT">  
-<div id="link">Go to Homepage</div>
+    <div>
+<a href="/frontend/index.html" class="link">Go to Homepage</a>
+<br/>
+<a id="restart" class="link">Restart</a>
+</div>
 <div id="title">Your best career fields</div>
 </div>   
 
-<div id="container">
-<div id="box1"></div>
-<div id="box2"></div>
-<div id="box3"></div>
+<div id="container" class="container">
 </div>
+<br/>
+<br/>
 
-<div id="main2">
-<div id="box1">
-    <div id="title1"><h1>Stem</h1></div>
-    <div id="perc1"><p>95.8% match</p></div>
-    <div id="des1"><p>$102,401/year average income</p></div>
-    <div id="gr1"><p>50% growth rate</p></div>
-    <button id="but1" type="button" class="butt
-    "><span class="button__text">Find Jobs</span>
-<span class="button__icon"> <ion-icon name="chevron-forward-outline"></ion-icon></span>
-</button>
-</div>
-
-<div id="box2">
+<!-- <div id="box2">
     <div id="title2"><h1>Healthcare</h1></div>
     <div id="perc2"><p>84.2% match</p></div>
     <div id="des2"><p>$84,401/year average income</p></div>
@@ -63,10 +60,10 @@
     "><span class="button__text">Find Jobs</span>
 <span class="button__icon"> <ion-icon name="chevron-forward-outline"></ion-icon></span>
 </button>
-</div>
+</div> -->
 </div>
 <!-- onclick="openPopup()" -->
-  <button id="open-popup" type="button">Dummy</button>
+  <!-- <button id="open-popup" type="button">Dummy</button> -->
   <div class="popup" id="popup">
     <div class="popup-elements">
     <h2>Software Engineer</h2>
@@ -98,6 +95,7 @@
       <h3>Projected Openings</h3>
       <p id="projected-openings">+411,400</p>
     </div>
+    
   </div>
   </div>
   </div>
@@ -118,4 +116,5 @@
       })
     </script>
 </body>
+<script src="js/results.js"></script>
 </html>

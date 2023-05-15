@@ -4,12 +4,18 @@ html {
 
 #container {
     display: flex;
-    align-items: center;
+    flex-direction: column;
     justify-content: center;
-    height: 100vh;
-    
+    align-items: center;
+    gap: 5px;
    
+}
 
+section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
 }
 
 button {
@@ -21,12 +27,24 @@ button {
     border-style: solid;
     padding: 15px;
     font-weight: 400;
-    margin: 1.45vh;
+    margin: 0.5vh;
+}
+
+#restart {
+    margin-top: 20px;
+    margin-left: 10px;
+    color: blue;
+}
+
+#restart:hover {
+    cursor: pointer;
+}
+
+h2 {
+    max-width: 700px;
 }
 
    
-   
-
 
 button:hover {
     transform: translate(0, -6px);
@@ -35,3 +53,11 @@ button:hover {
     
 }
 
+a {
+    text-decoration: none;
+}
+
+.box {
+    display: flex;
+    
+}
